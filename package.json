@@ -6,6 +6,7 @@
   "repository": "thejameskyle/import-inspector",
   "author": "James Kyle <me@thejameskyle.com>",
   "license": "MIT",
+  "files": [],
   "devDependencies": {
     "flow-bin": "^0.48.0"
   }
