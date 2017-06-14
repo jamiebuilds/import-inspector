@@ -1,6 +1,6 @@
 {
   "name": "import-inspector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wrap dynamic imports with information about the import itself",
   "main": "index.js",
   "repository": "thejameskyle/import-inspector",
