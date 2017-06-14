@@ -1,12 +1,8 @@
 'use strict';
 
-var name = 'import-inspector-metadata';
-var key = typeof Symbol === 'function' ? Symbol(name) : name;
 var callbacks = [];
 
-function wrap(promise, metadata) {
-  promise[key] = metadata;
-
+function report(promise, metadata) {
   callbacks.forEach(function(callback) {
     callback(metadata);
   });
@@ -14,14 +10,13 @@ function wrap(promise, metadata) {
   return promise;
 }
 
-function inspect(promise) {
-  return promise[key];
+function inspect(callback) {
+  var index = callbacks.push(callback) - 1;
+
+  return function stopInspecting() {
+    callbacks.splice(index, 1);
+  };
 }
 
-function addCallback(callback) {
-  callbacks.push(callback);
-}
-
-exports.wrap = wrap;
+exports.report = report;
 exports.inspect = inspect;
-exports.addCallback = addCallback;

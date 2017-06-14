@@ -1,22 +1,30 @@
 # import-inspector
 
-> Wrap dynamic imports with information about the import itself
+> Wrap dynamic imports with metadata about the import
 
 ```js
-import {wrap, inspect} from 'import-inspector';
+import {inspect, report} from 'import-inspector';
 
-const promise = wrap(import('./other-module'), {
-  whatever: 42,
+const stopInspecting = inspect(metadata => {
+  console.log(metadata);
 });
 
-// Continue to use the promise exactly as before
-promise.then(module => {
-  // ...
-});
+report(import('./other-module'), { whatever: 42 });
+// log: { whatever: 42 }
 
-// But get information back out
-let metadata = inspect(loader);
-// {
-//   whatever: 42
-// }
+stopInspecting();
 ```
+
+## API
+
+#### `inspect(callback)`
+
+Add a callback to be called whenever the `report()` function is called.
+Receives `metadata` from `report()`.
+
+Returns a function `stopInspecting()` that will stop the `callback` from being
+called again.
+
+#### `report(promise, metadata)`
+
+Wrap an import promise with some metadata to report.

@@ -1,7 +1,7 @@
 {
   "name": "import-inspector",
   "version": "1.1.0",
-  "description": "Wrap dynamic imports with information about the import itself",
+  "description": "Wrap dynamic imports with metadata about the import",
   "main": "index.js",
   "repository": "thejameskyle/import-inspector",
   "author": "James Kyle <me@thejameskyle.com>",
