@@ -1,0 +1,12 @@
+{
+  "name": "import-inspector",
+  "version": "0.0.0",
+  "description": "Wrap dynamic imports with information about the import itself",
+  "main": "index.js",
+  "repository": "thejameskyle/import-inspector",
+  "author": "James Kyle <me@thejameskyle.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "flow-bin": "^0.48.0"
+  }
+}

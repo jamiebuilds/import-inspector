@@ -1,0 +1,14 @@
+declare module 'import-inspector' {
+  declare type Wrapped<Module, Metadata> = Promise<Module> & {
+    must_be_a_promise_returned_by_import_inspector_wrap: string & number
+  };
+
+  declare export function wrap<Module, Metadata>(
+    promise: Promise<Module>,
+    metadata: Metadata,
+  ): Wrapped<Module, Metadata>;
+
+  declare export function inspect<Metadata>(
+    promise: Wrapped<mixed, Metadata>,
+  ): Metadata;
+}
