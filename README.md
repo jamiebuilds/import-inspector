@@ -1,6 +1,6 @@
 # import-inspector
 
-> Small API for wrapping import promises with metadata
+> Wrap dynamic imports with information about the import itself
 
 ```js
 import {wrap, inspect} from 'import-inspector';
